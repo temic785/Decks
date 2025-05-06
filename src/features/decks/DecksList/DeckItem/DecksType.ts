@@ -23,3 +23,4 @@ export type BaseResponse = {
   items: ItemDecks[]
   pagination: PaginationDocks
 }
+export type CreateDeckResponse = Omit<ItemDecks, 'isFavorite' | 'author'>

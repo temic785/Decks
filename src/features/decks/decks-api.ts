@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { BaseResponse } from './DecksList/DeckItem/DecksType.ts'
+import { BaseResponse, CreateDeckResponse } from './DecksList/DeckItem/DecksType.ts'
 
 export const instance = axios.create({
   baseURL: 'https://api.flashcards.andrii.es',
@@ -12,4 +12,7 @@ export const decksApi = {
   getDecks() {
     return instance.get<BaseResponse>('/v2/decks')
   },
+createDeck(name:string) {
+    return instance.post<CreateDeckResponse>('/v1/decks',{name})
+}
 }
